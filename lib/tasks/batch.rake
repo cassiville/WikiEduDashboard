@@ -10,7 +10,6 @@ require "#{Rails.root}/lib/data_cycle/views_update"
 namespace :batch do
   desc 'Constant data updates'
   task update_constantly: :environment do
-    Rails.application.eager_load!
     ConstantUpdate.new
   end
 
@@ -31,7 +30,6 @@ namespace :batch do
 
   desc 'View import updates'
   task update_views: :environment do
-    Rails.application.eager_load!
     ViewsUpdate.new
   end
 
